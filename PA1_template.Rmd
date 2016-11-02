@@ -32,15 +32,15 @@ library(lubridate)
 
 ### 1. Code for reading in the dataset and/or processing the data
 
-Downloading the data from the web and saves it in the working directory as **Factivity.zip**
+Downloading the data from the web and saves it in the working directory as **activity.zip**
 
-```{r cache=TRUE}
+```{r}
 fileURL <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
 download.file(fileURL, destfile = "Factivity.zip")
 ```
 Unzipping the downloaded data set, reading the information from **activity.csv** file and and assigning it to variable `activity` 
 ```{r}
-unzip("Factivity.zip")
+unzip("activity.zip")
 activity <- read.csv("activity.csv", stringsAsFactors=FALSE)
 ```
 \ 
@@ -53,7 +53,7 @@ stepsperday <- aggregate(steps ~ date, activity, FUN = sum)
 ```
 
 Drawing the histogram using **ggplot2** package. I have chosen bindwidth of 2000 wich will count the number of days with steps between 0 and 2000 for the first bind, number of days with steps between 2000 and 4000 for the second bind etc.
-```{r}
+```{r plot1, fig.path = "figure/"}
 ggplot(stepsperday, aes(steps))+
     geom_histogram(binwidth  = 2000)+
     xlab("Steps per day")+
@@ -80,7 +80,7 @@ stepsperinterval <- aggregate(steps ~ interval, activity, FUN = mean)
 ```
 
 Drawing the time series plot using **ggplot2** package. 
-```{r}
+```{r plot2, fig.path = "figure/"}
 ggplot(data=stepsperinterval, aes(x=interval, y=steps))+
     geom_line(colour = "red", size = 1)+
     ggtitle("Average number of steps taken each interval")
@@ -117,7 +117,7 @@ stepsperdayNA <- aggregate(steps ~ date, activity, FUN = sum, na.action = na.pas
 
 As i couldn`t find option in **ggplot2** to include NA values I will first srt all the NA values to 0 and then draw the histogram.
 
-```{r}
+```{r plot3, fig.path = "figure/"}
 stepsperdayNA[is.na(stepsperdayNA$steps),2]=0
 ggplot(stepsperdayNA, aes(steps))+
     geom_histogram(binwidth  = 2000)+
@@ -150,7 +150,7 @@ weekdata <- aggregate(steps~interval + we, activity, FUN = mean)
 ```
 
 Drawing the time series plot for week day and for the weekend day using **ggplot2** package. 
-```{r}
+```{r plot4, fig.path = "figure/"}
 ggplot(data=weekdata, aes(x=interval, y=steps))+
     geom_line(colour = "red", size = 1)+
     facet_grid(we~.)+

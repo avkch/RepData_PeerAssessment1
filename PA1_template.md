@@ -60,7 +60,7 @@ ggplot(stepsperday, aes(steps))+
     ggtitle("Histogram of the total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](figure/plot1-1.png)<!-- -->
 
 \ 
 
@@ -95,7 +95,7 @@ ggplot(data=stepsperinterval, aes(x=interval, y=steps))+
     ggtitle("Average number of steps taken each interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](figure/plot2-1.png)<!-- -->
 
 \ 
 
@@ -143,7 +143,7 @@ ggplot(stepsperdayNA, aes(steps))+
     ggtitle("Histogram of the total number of steps taken each day (NA included)")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](figure/plot3-1.png)<!-- -->
 
 Calculating the mean and median from the data including NA. and printing the results from both with and without NA values
 
@@ -190,7 +190,7 @@ ggplot(data=weekdata, aes(x=interval, y=steps))+
     ggtitle("Average number of steps taken each interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](figure/plot4-1.png)<!-- -->
 
 \ 
 \ 
