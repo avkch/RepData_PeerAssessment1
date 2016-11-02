@@ -9,8 +9,8 @@ The variables included in this dataset are:
  - **interval:** Identifier for the 5-minute interval in which measurement was taken
 The dataset is stored in a comma-separated-value (CSV) file and there are a total of 17,568 observations in this dataset.
 
-\ 
-\ 
+<br/> 
+<br/>
 
 ## Preparing the environment
 
@@ -20,8 +20,8 @@ Loading the packages necessary for the analysis
 library(ggplot2)
 library(lubridate)
 ```
-\ 
-\ 
+<br/>
+<br/> 
 
 ## Analysis
 <br/> 
@@ -41,7 +41,7 @@ Unzipping the downloaded data set, reading the information from **activity.csv**
 unzip("activity.zip")
 activity <- read.csv("activity.csv", stringsAsFactors=FALSE)
 ```
-\ 
+<br/> 
 
 ### 2. Histogram of the total number of steps taken each day
 
@@ -62,7 +62,7 @@ ggplot(stepsperday, aes(steps))+
 
 ![](figure/plot1-1.png)<!-- -->
 
-\ 
+<br/> 
 
 ### 3. Mean and median number of steps taken each day
 
@@ -77,7 +77,7 @@ print(paste0("Mean = ", meanstepsperday, " | Median = ", mdianstepsperday))
 ```
 ## [1] "Mean = 10766.1886792453 | Median = 10765"
 ```
-\ 
+<br/> 
 
 ### 4. Time series plot of the average number of steps taken
 
@@ -97,7 +97,7 @@ ggplot(data=stepsperinterval, aes(x=interval, y=steps))+
 
 ![](figure/plot2-1.png)<!-- -->
 
-\ 
+<br/> 
 
 ### 5. The 5-minute interval that, on average, contains the maximum number of steps
 
@@ -114,7 +114,7 @@ print(paste0("The 5 minute interval with maximum steps is: ", maxstepsinterval))
 ```
 ## [1] "The 5 minute interval with maximum steps is: 835"
 ```
-\ 
+<br/> 
 
 ### 6. Code to describe and show a strategy for imputing missing data
 
@@ -122,7 +122,7 @@ The aggregate function used in my calculations is ignoring NA variables and is n
 To include NA values in the calculations the argument `na.action` shluld be set to `na.pass`.
 **ggplot2** is ignoring the NA values as well. I couldn`t find option to includ the NA values in the calculations.
 
-\ 
+<br/> 
 
 ### 7. Histogram of the total number of steps taken each day after missing values are imputed
 
@@ -164,7 +164,7 @@ print(paste0("MeanNA = ", meanstepsperdayNA, " | MedianNA = ", mdianstepsperdayN
 ```
 ## [1] "MeanNA = 9354.22950819672 | MedianNA = 10395"
 ```
-\ 
+<br/> 
 
 ### 8. Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends
 
@@ -192,6 +192,6 @@ ggplot(data=weekdata, aes(x=interval, y=steps))+
 
 ![](figure/plot4-1.png)<!-- -->
 
-\ 
-\ 
+<br/> 
+<br/>
  
