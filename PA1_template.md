@@ -24,11 +24,11 @@ library(lubridate)
 \ 
 
 ## Analysis
-\ 
+<br/> 
 
 ### 1. Code for reading in the dataset and/or processing the data
 
-Downloading the data from the web and saves it in the working directory as **Factivity.zip**
+Downloading the data from the web and saves it in the working directory as **activity.zip**
 
 
 ```r
@@ -38,7 +38,7 @@ download.file(fileURL, destfile = "Factivity.zip")
 Unzipping the downloaded data set, reading the information from **activity.csv** file and and assigning it to variable `activity` 
 
 ```r
-unzip("Factivity.zip")
+unzip("activity.zip")
 activity <- read.csv("activity.csv", stringsAsFactors=FALSE)
 ```
 \ 
