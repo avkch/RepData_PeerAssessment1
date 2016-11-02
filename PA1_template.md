@@ -33,7 +33,7 @@ Downloading the data from the web and saves it in the working directory as **act
 
 ```r
 fileURL <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
-download.file(fileURL, destfile = "Factivity.zip")
+download.file(fileURL, destfile = "activity.zip")
 ```
 Unzipping the downloaded data set, reading the information from **activity.csv** file and and assigning it to variable `activity` 
 
